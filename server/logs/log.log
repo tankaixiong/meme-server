@@ -1,0 +1,248 @@
+2015-03-25 14:26:31,105 [main] INFO  LoaderManger[191] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 14:26:31,109 [main] INFO  LoaderManger[191] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 14:26:31,111 [main] INFO  LoaderManger[191] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 14:26:31,145 [main] INFO  LoaderManger[164] - 动态加载业务:set-load
+2015-03-25 14:26:31,146 [main] INFO  BaseMsgDispatcher[56] - 初始化所有handler
+2015-03-25 14:26:31,148 [main] TRACE BaseMsgDispatcher[62] - act:login,handler:class tank.meme.handler.user.LoginHandler
+2015-03-25 14:26:31,148 [main] TRACE BaseMsgDispatcher[62] - act:register,handler:class tank.meme.handler.user.RegisterHandler
+2015-03-25 14:26:31,148 [main] TRACE BaseMsgDispatcher[62] - act:set-load,handler:class tank.handler.SettingHandler
+2015-03-25 14:26:31,148 [main] INFO  BaseMsgDispatcher[67] - 初始化处理队列线程
+2015-03-25 14:26:31,148 [main] INFO  BaseMsgDispatcher[68] - 当前线程数:4
+2015-03-25 14:26:31,149 [main] INFO  QueueMsgDispatcher[40] - 当前线程数:4
+2015-03-25 14:26:31,150 [main] INFO  StartRun[32] - 添加JVM关闭hook!
+2015-03-25 14:26:39,458 [pool-1-thread-1] TRACE DefaultServerSocketHandler[47] - session Opened
+2015-03-25 14:26:39,476 [pool-1-thread-1] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"game_login","data":["develop","tank",1],"time":1427264799}
+2015-03-25 14:26:39,640 [pool-4-thread-2] ERROR QueueMsgDispatcher$MsgBee[81] - 没有找到相应的处理handler:game_login
+2015-03-25 14:26:41,229 [pool-1-thread-1] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"set-load","data":["1"],"time":1427264801}
+2015-03-25 14:26:41,368 [pool-1-thread-1] TRACE DefaultServerSocketHandler[134] - 【返回数据包】: {"time":1427264801347,"act":"set-load","data":["6860.372832194876_id","test updata jar"]}
+2015-03-25 14:26:43,787 [pool-1-thread-1] TRACE DefaultServerSocketHandler[61] - session Closed
+2015-03-25 16:01:16,496 [main] INFO  LoaderManger[187] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 16:01:16,500 [main] INFO  LoaderManger[187] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 16:01:16,502 [main] INFO  LoaderManger[187] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 16:01:16,512 [main] ERROR LoaderManger[64] - {}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SettingHandler': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at tank.meme.core.loader.LoaderManger.parseJarClass(LoaderManger.java:156) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.loadSdkJar(LoaderManger.java:61) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.onApplicationEvent(LoaderManger.java:222) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.onApplicationEvent(LoaderManger.java:38) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at tank.meme.core.Application.init(Application.java:63) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.StartRun.main(StartRun.java:27) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:555) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.7.0_67]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2570) ~[na:1.7.0_67]
+	at java.lang.Class.getDeclaredMethods(Class.java:1855) ~[na:1.7.0_67]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:571) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:490) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:474) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:241) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1059) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1032) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:505) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:527) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 19 common frames omitted
+Caused by: java.lang.ClassNotFoundException: tank.meme.domain.Setting
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366) ~[na:1.7.0_67]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355) ~[na:1.7.0_67]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.7.0_67]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425) ~[na:1.7.0_67]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358) ~[na:1.7.0_67]
+	... 38 common frames omitted
+2015-03-25 16:01:16,514 [main] INFO  BaseMsgDispatcher[56] - 初始化所有handler
+2015-03-25 16:03:08,230 [main] INFO  LoaderManger[187] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 16:03:08,230 [main] INFO  LoaderManger[187] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 16:03:08,230 [main] INFO  LoaderManger[187] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 16:03:08,250 [main] ERROR LoaderManger[64] - {}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SettingHandler': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at tank.meme.core.loader.LoaderManger.parseJarClass(LoaderManger.java:156) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.loadSdkJar(LoaderManger.java:61) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.onApplicationEvent(LoaderManger.java:222) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.onApplicationEvent(LoaderManger.java:38) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:151) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:128) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:331) [spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at tank.meme.core.Application.init(Application.java:63) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.StartRun.main(StartRun.java:27) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:555) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.7.0_67]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2570) ~[na:1.7.0_67]
+	at java.lang.Class.getDeclaredMethods(Class.java:1855) ~[na:1.7.0_67]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:571) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:490) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:474) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:241) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1059) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1032) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:505) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:527) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 19 common frames omitted
+Caused by: java.lang.ClassNotFoundException: tank.meme.domain.Setting
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366) ~[na:1.7.0_67]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355) ~[na:1.7.0_67]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.7.0_67]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425) ~[na:1.7.0_67]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358) ~[na:1.7.0_67]
+	... 38 common frames omitted
+2015-03-25 16:03:08,252 [main] INFO  BaseMsgDispatcher[56] - 初始化所有handler
+2015-03-25 16:04:38,252 [Timer-1] INFO  LoaderTimer$1[45] - 新加载jar:setting-service-0.0.1.jar
+2015-03-25 16:04:38,254 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 16:04:38,255 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 16:04:38,256 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 16:04:38,262 [Timer-1] ERROR LoaderManger[83] - {}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'SettingHandler': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1204) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:956) ~[spring-context-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at tank.meme.core.loader.LoaderManger.parseJarClass(LoaderManger.java:156) ~[meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderManger.reLoaderJar(LoaderManger.java:80) ~[meme-core-0.0.1-SNAPSHOT.jar:na]
+	at tank.meme.core.loader.LoaderTimer$1.run(LoaderTimer.java:46) [meme-core-0.0.1-SNAPSHOT.jar:na]
+	at java.util.TimerThread.mainLoop(Timer.java:555) [na:1.7.0_67]
+	at java.util.TimerThread.run(Timer.java:505) [na:1.7.0_67]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private tank.service.ISettingService tank.handler.SettingHandler.service; nested exception is java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:555) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 13 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: tank/meme/domain/Setting
+	at java.lang.Class.getDeclaredMethods0(Native Method) ~[na:1.7.0_67]
+	at java.lang.Class.privateGetDeclaredMethods(Class.java:2570) ~[na:1.7.0_67]
+	at java.lang.Class.getDeclaredMethods(Class.java:1855) ~[na:1.7.0_67]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:571) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:490) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:474) ~[spring-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:241) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1059) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1032) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:505) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:302) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:229) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:298) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:527) ~[spring-beans-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+	... 15 common frames omitted
+Caused by: java.lang.ClassNotFoundException: tank.meme.domain.Setting
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366) ~[na:1.7.0_67]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355) ~[na:1.7.0_67]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.7.0_67]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:425) ~[na:1.7.0_67]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308) ~[na:1.7.0_67]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358) ~[na:1.7.0_67]
+	... 34 common frames omitted
+2015-03-25 16:11:58,439 [main] INFO  LoaderManger[187] - 注册 bean:LoginHandler 到spring 容器
+2015-03-25 16:11:58,443 [main] INFO  LoaderManger[187] - 注册 bean:RegisterHandler 到spring 容器
+2015-03-25 16:11:58,444 [main] INFO  LoaderManger[187] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 16:11:58,447 [main] INFO  LoaderManger[187] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 16:11:58,449 [main] INFO  LoaderManger[187] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 16:11:58,454 [main] INFO  LoaderManger[160] - 动态加载业务:register
+2015-03-25 16:11:58,490 [main] INFO  LoaderManger[160] - 动态加载业务:set-load
+2015-03-25 16:11:58,493 [main] INFO  LoaderManger[160] - 动态加载业务:login
+2015-03-25 16:11:58,494 [main] INFO  BaseMsgDispatcher[56] - 初始化所有handler
+2015-03-25 16:11:58,495 [main] TRACE BaseMsgDispatcher[62] - act:login,handler:class tank.handler.LoginHandler
+2015-03-25 16:11:58,495 [main] TRACE BaseMsgDispatcher[62] - act:register,handler:class tank.handler.RegisterHandler
+2015-03-25 16:11:58,495 [main] TRACE BaseMsgDispatcher[62] - act:set-load,handler:class tank.handler.SettingHandler
+2015-03-25 16:11:58,495 [main] INFO  BaseMsgDispatcher[67] - 初始化处理队列线程
+2015-03-25 16:11:58,496 [main] INFO  BaseMsgDispatcher[68] - 当前线程数:4
+2015-03-25 16:11:58,496 [main] INFO  QueueMsgDispatcher[40] - 当前线程数:4
+2015-03-25 16:11:58,497 [main] INFO  StartRun[29] - 添加JVM关闭hook!
+2015-03-25 16:12:13,082 [pool-1-thread-1] TRACE DefaultServerSocketHandler[47] - session Opened
+2015-03-25 16:12:13,166 [pool-1-thread-1] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"game_login","data":["develop","tank",1],"time":1427271133}
+2015-03-25 16:12:13,307 [pool-4-thread-2] ERROR QueueMsgDispatcher$MsgBee[81] - 没有找到相应的处理handler:game_login
+2015-03-25 16:12:20,181 [pool-1-thread-1] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"set-load","data":["1"],"time":1427271140}
+2015-03-25 16:12:20,329 [pool-1-thread-1] TRACE DefaultServerSocketHandler[134] - 【返回数据包】: {"time":1427271140297,"act":"set-load","data":["3318.035125824239_id","test updata jar"]}
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderTimer$1[45] - 新加载jar:meme-service-0.0.1.jar
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[187] - 注册 bean:LoginHandler 到spring 容器
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[187] - 注册 bean:RegisterHandler 到spring 容器
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingHandler 到spring 容器
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingRepository 到spring 容器
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[187] - 注册 bean:SettingServiceImpl 到spring 容器
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[160] - 动态加载业务:register
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[160] - 动态加载业务:set-load
+2015-03-25 16:13:28,494 [Timer-1] INFO  LoaderManger[160] - 动态加载业务:login
+2015-03-25 16:14:20,862 [pool-1-thread-2] INFO  DefaultServerSocketHandler[88] - 空闲!自动断开
+2015-03-25 16:14:58,508 [Timer-1] INFO  LoaderTimer$1[57] - 检测jar包:meme-service-0.0.1.jar是否有更新...
+2015-03-25 16:16:21,362 [pool-1-thread-3] INFO  DefaultServerSocketHandler[88] - 空闲!自动断开
+2015-03-25 16:16:28,518 [Timer-1] INFO  LoaderTimer$1[57] - 检测jar包:meme-service-0.0.1.jar是否有更新...
+2015-03-25 16:16:44,876 [pool-1-thread-3] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"set-load","data":["1"],"time":1427271404}
+2015-03-25 16:16:44,920 [pool-1-thread-3] TRACE DefaultServerSocketHandler[134] - 【返回数据包】: {"time":1427271404913,"act":"set-load","data":["8119.010703924161_id","test updata jar"]}
+2015-03-25 16:16:54,266 [pool-1-thread-3] TRACE DefaultServerSocketHandler[98] - message Received:{"act":"set-load","data":["1"],"time":1427271414}
+2015-03-25 16:16:54,285 [pool-1-thread-3] TRACE DefaultServerSocketHandler[134] - 【返回数据包】: {"time":1427271414283,"act":"set-load","data":["3543.358653037895_id","test updata jar"]}
+2015-03-25 16:17:01,362 [pool-1-thread-4] TRACE DefaultServerSocketHandler[61] - session Closed
+2015-03-25 16:17:01,365 [pool-1-thread-3] ERROR DefaultServerSocketHandler[79] - 服务端处理产生异常:{}
+java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.7.0_67]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:1.7.0_67]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[na:1.7.0_67]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197) ~[na:1.7.0_67]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379) ~[na:1.7.0_67]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:311) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:694) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:668) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:657) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:67) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1121) ~[mina-core-2.0.9.jar:na]
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64) ~[mina-core-2.0.9.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_67]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_67]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_67]
